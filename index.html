@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!--Header. Will have a highscores button on the top left and a timer on the top right-->
+    <header>
+        <a href="./highscores.html">Highscores</a>
+        <p id="Timer"></p>
+    </header>
+
+    <!--Start menu. make visible until button is pressed-->
+    <section class="start">
+        <h1>Coding Quiz</h1>
+        <p>Try to answer each question correctly within 60 seconds. For each incorrect question, time will be subtracted from the timer. </p>
+        <button id="start-button">Start</button>
+    </section>
+
+    <!--Questions. When I press an answer, it will announce whether it is correct or wrong, and will move on to the next question. Make invisible until button is pressed-->
+
+    <main class="card none">
+        <h1 id="question-title"></h1>
+        <button class="answer" id="answer-1"></button>
+        <button class="answer" id="answer-2"></button>
+        <button class="answer" id="answer-3"></button>
+        <button class="answer" id="answer-4"></button>
+    </main>
+    <!--End Menu. make invisible until game is over-->
+    <section class="none highscores">
+        <h2>Submit your high score:</h2>
+        <div>
+            <input type="text" name="high-score" id="highscore" placeholder="KAP" />
+            <button>Submit</button>
+        </div>
+    </section>
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

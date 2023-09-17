@@ -1,0 +1,122 @@
+/*colors*/
+
+:root{
+    --light: #f6f7ee;
+    --dark: #664232;
+    --accent: #c7b96c;
+    --accent2: #91dabb;
+}
+
+.none{
+    display: none !important;
+}
+
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--accent);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+header a:hover{
+    text-shadow: 1px 2px 2px var(--dark);
+}
+
+/* Body */
+body{
+    Background-color: var(--light);
+}
+/* 
+Start menu */
+.start{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--accent);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px; 
+    color: var(--light);
+    font-family: sans-serif;
+}
+
+.start p{
+    padding-bottom: 30px;
+}
+
+button{
+    background-color: var(--light);
+    border: none;
+    padding: 15px 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: var(--dark);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button:hover{
+    box-shadow: 2px 3px 3px var(--dark);
+}
+
+/*Question Card*/
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#question-title{
+    color: var(--light);
+}
+
+.answer{
+    margin: 10px;
+}
+
+/* Highscores */
+.highscores{
+    background-color: var(--accent);
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.highscores div{
+    display: flex;
+    Justify-content: space-evenly;
+}
+h2{
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+input{
+    width: 400px;
+    padding: 10px;
+    border-color: var(--dark);
+    border: none;
+    border-radius: 10px;
+    background-color: var(--light);
+}
+
+section div button{
+    width: 400px;
+}
