@@ -1,4 +1,5 @@
-//add global variables
+//Global variables
+
 var qTitleEl = $('#question-title');
 var startMenu = $('.start');
 var qCardEl = $('.card')
@@ -11,18 +12,42 @@ var answer4 = $('#answer-4');
 var answerAnnouncer =$('.answer-announcer');
 var right = $('.right');
 var highscores = $('.highscores');
+var scoreSubmitButton = $('#scores');
+var timerEl = $('#timer');
+var finalScore = {
+    initial: $('#highscore')
+
+}
+
+//timer
+
+function timer() {
+    var timeLeft = 60;
+    var timerInterval = setInterval(function(){
+        if (timeLeft>1){
+            timerEl.text(timeLeft);
+            timeLeft--;
+        } else{
+            timerEl.text(" ");
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+}
+
+//Questions
 
 function questionOne(){
-qTitleEl.text("Which is not a primative data type?");
-answer1.text('number');
-answer2.text('string');
-answer3.text('object');
-answer4.text('boolean');
-answer3.addClass('right')
-button.on('click', questionTwo);
+    qTitleEl.text("Which is not a primative data type?");
+    answer1.text('number');
+    answer2.text('string');
+    answer3.text('object');
+    answer4.text('boolean');
+    answer3.addClass('right')
+    button.on('click', questionTwo);
 };
 
-//make function for question 2
+
 function questionTwo(){
     qTitleEl.text('What javascript function lets you round down?');
     answer1.text('Math.random');
@@ -31,22 +56,22 @@ function questionTwo(){
     answer4.text('Math.floor');
     button.on('click', questionThree);
 };
-// make function for question 3
+
 function questionThree(){
     qTitleEl.text('?');
-    answer1.text('Speedo');
-    answer2.text('Vest');
-    answer3.text('Sweater');
-    answer4.text('Dress');
+    answer1.text('?');
+    answer2.text('?');
+    answer3.text('/');
+    answer4.text('?');
     button.on('click', questionFour)
 }
-//make function for question 4
+
 function questionFour(){
-    qTitleEl.text('What is his favorite Food?');
-    answer1.text('spagetti');
-    answer2.text('Vest');
-    answer3.text('Sweater');
-    answer4.text('Dress');
+    qTitleEl.text('?');
+    answer1.text('?');
+    answer2.text('?');
+    answer3.text('?');
+    answer4.text('?');
     button.on('click', endGame)
 }
 
@@ -55,30 +80,23 @@ function endGame(){
     highscores.removeClass('none');
 }
 
+
 //make start button work w/timer 
 start.on('click', function(){
+    timer();
     qCardEl.removeClass('none');
     questionOne();
     startMenu.addClass('none');
-
-    })
-
-right.on('click', function(){
-    var divEl = $('div');
-    if(right){
-        divEl.removeClass('none');
-        answerAnnouncer.text('Correct!');
-        return;
-    } else {
-        divEl.removeClass('none');
-        answerAnnouncer.text('Incorrect...');
-        return;
-    };   
 })
-//change to next question
 
 //make highscores stored in local storage
 
 function scoreSubmissionHandler(){
-    localStorage.setItem()
+    localStorage.setItem('initials', JSON.stringify(finalScore))
 }
+
+scoreSubmitButton.on('click', function(){
+scoreSubmissionHandler()
+})
+
+

@@ -15,6 +15,7 @@
 header{
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     background-color: var(--accent);
     padding: 30px;
     margin: 10px;
@@ -31,6 +32,14 @@ header a{
 
 header a:hover{
     text-shadow: 1px 2px 2px var(--dark);
+}
+
+#timer{
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 20px;
 }
 
 /* Body */
@@ -120,3 +129,4 @@ input{
 section div button{
     width: 400px;
 }
+
