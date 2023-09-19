@@ -22,7 +22,7 @@ header{
     border-radius: 10px;
 }
 
-header a{
+a{
     text-decoration: none;
     color: var(--light);
     font-weight: bold;
@@ -30,7 +30,7 @@ header a{
     font-size: 30px;
 }
 
-header a:hover{
+a:hover{
     text-shadow: 1px 2px 2px var(--dark);
 }
 
@@ -109,12 +109,23 @@ button:hover{
     display: flex;
     Justify-content: space-evenly;
 }
+
 h2{
     text-decoration: none;
     color: var(--light);
     font-weight: bold;
     font-family: sans-serif;
     font-size: 30px;
+}
+
+h3{
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 25px;
+    margin-bottom: 40px;
+    display: flex;
 }
 
 input{
@@ -124,9 +135,23 @@ input{
     border: none;
     border-radius: 10px;
     background-color: var(--light);
+    margin-right: 10px;
 }
 
 section div button{
     width: 400px;
 }
 
+h3 a {
+    font-size: 25px;
+    align-items: center;
+}
+
+#answer-announcer {
+    text-decoration: none;
+    color: var(--light);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 25px;
+    display: flex;
+}
