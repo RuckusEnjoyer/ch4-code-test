@@ -31,7 +31,7 @@ function correct(){
         return;
     } else{
         answerAnnouncer.text("Incorrect.")
-        timeLeft-10;
+        timeLeft - 10;
         return;
     }
 }
@@ -41,7 +41,7 @@ function questionOne(){
     answer2.text('string');
     answer3.text('object');
     answer4.text('boolean');
-    answer3.addClass('true')
+    answer3.attr("data-state", "correct")
     button.on('click', function(){
         correct()
         questionTwo()
@@ -68,6 +68,7 @@ function questionThree(){
     answer2.text('Top-Down');
     answer3.text('Around and Around');
     answer4.text('It is not read');
+    answer2.attr("data-state", "correct")
     button.on('click', function(){
         correct()
         questionFour()
@@ -75,11 +76,11 @@ function questionThree(){
 }
 
 function questionFour(){
-    qTitleEl.text('?');
-    answer1.text('?');
-    answer2.text('?');
-    answer3.text('?');
-    answer4.text('?');
+    qTitleEl.text('What is the correct API function for an event listener in vanilla javascript?');
+    answer1.text('variable.addEventListener(event-type, function(){})');
+    answer2.text('variable.on(event-type, function(){})');
+    answer3.text('addEventListener(event-type, function(){})');
+    answer4.text('variable.addEventListener(function(){}, event-type');
     button.on('click', function(){
         correct()
         endGame()
