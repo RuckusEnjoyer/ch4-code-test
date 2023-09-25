@@ -1,7 +1,7 @@
 /*colors*/
 
 :root{
-    --light: #f6f7ee;
+    --light: #e4e6d9;
     --dark: #664232;
     --accent: #c7b96c;
     --accent2: #519176;
@@ -16,7 +16,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background-color: var(--accent);
+    background-image: linear-gradient(45deg, var(--accent2), var(--accent));
     padding: 30px;
     margin: 10px;
     border-radius: 10px;
@@ -83,7 +83,7 @@ button:hover{
 .card{
     display: flex;
     flex-direction: column;
-    background-color: var(--accent);
+    background-image: linear-gradient(45deg, var(--accent), var(--dark));
     padding: 30px;
     margin: 30px;
     border-radius: 10px;
@@ -99,7 +99,7 @@ button:hover{
 
 /* Highscores */
 .highscores{
-    background-color: var(--accent);
+    background-image: linear-gradient(45deg, var(--accent), var(--dark));
     padding: 30px;
     margin: 30px;
     border-radius: 10px;
@@ -142,9 +142,9 @@ section div button{
     width: 400px;
 }
 
-h3 a {
+.start-over {
     font-size: 25px;
-    align-items: center;
+    align-self: center;
 }
 
 #answer-announcer {
