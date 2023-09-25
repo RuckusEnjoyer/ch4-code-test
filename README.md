@@ -9,7 +9,7 @@ This test has gone through some considerable work. Through debugging this web ap
 
 To play this quiz, click on the start button. A timer will appear along with the first question. If you answer incorrectly, ten seconds will be subtracted from the timer. Your final score will be how much time remains once you are complete. 
 
-![Screenshot of the web application.](assets/images/ruckusenjoyer.github.io_ch4-code-test_.png)
+![Screenshot of the web application.](<assets/images/ruckusenjoyer.github.io_ch4-code-test_ (1).png>)
 
 ## Link
 
