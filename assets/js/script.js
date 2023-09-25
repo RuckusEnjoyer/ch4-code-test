@@ -26,14 +26,18 @@ var clickedAnswer
 
 
 //The Questions
+
+//question one
 function questionOne(){
     qTitleEl.text("Which is not a primative data type?");
     answer1.text('number');
     answer2.text('string');
     answer3.text('object');
     answer4.text('boolean');
+    //event listener for a button click
     button.on('click', function(){
         clickedAnswer = $(this).text().trim();
+        //function for correct/incorrect
     $(function(){
         if (clickedAnswer === "object") {
             answerAnnouncer.text("Correct!");
@@ -47,7 +51,7 @@ function questionOne(){
     });
 };
 
-
+//question 2
 function questionTwo(){
     qTitleEl.text('What javascript function lets you round down?');
     answer1.text('Math.random');
@@ -70,6 +74,7 @@ function questionTwo(){
     });
 };
 
+//question 3
 function questionThree(){
     qTitleEl.text('What way is Javascript read?');
     answer1.text('Left to Right');
@@ -91,6 +96,7 @@ function questionThree(){
     });
 }
 
+//question 4
 function questionFour(){
     qTitleEl.text('What is the correct API function for an event listener in vanilla javascript?');
 
@@ -114,11 +120,7 @@ function questionFour(){
     });
 }
 
-
-
-
 //timer
-
 function timer() {
     timerInterval = setInterval(function(){
         if (timeLeft > 0){
@@ -163,16 +165,15 @@ scoreSubmitButton.on("click", function(event) {
     } else {
         array = []
     }
-    // Create an object with properties for initials and time
+
     var data = {
       initials: initials,
       time: time
     };
+
     array.push(data)
-  
-    // Convert the object to a JSON string
+
     var jsonData = JSON.stringify(array);
   
-    // Store the JSON string in the local storage
     localStorage.setItem("scores", jsonData);
   });
