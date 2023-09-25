@@ -34,6 +34,8 @@ function questionOne(){
     answer2.text('string');
     answer3.text('object');
     answer4.text('boolean');
+     // Remove previous event listeners
+    button.off('click');
     //event listener for a button click
     button.on('click', function(){
         clickedAnswer = $(this).text().trim();
@@ -58,10 +60,14 @@ function questionTwo(){
     answer2.text('Math.round');
     answer3.text('Math.ceiling');
     answer4.text('Math.floor');
+    
+     // Remove previous event listeners
+    button.off('click');
+
     button.on('click', function(){
         clickedAnswer = $(this).text().trim();
         $(function(){
-            if (clickedAnswer === "math.floor") {
+            if (clickedAnswer === "Math.floor") {
                 answerAnnouncer.text("Correct!");
                 return
             } else {
@@ -81,6 +87,9 @@ function questionThree(){
     answer2.text('Top-Down');
     answer3.text('Around and Around');
     answer4.text('It is not read');
+     // Remove previous event listeners
+    button.off('click');
+
     button.on('click', function(){
         clickedAnswer = $(this).text().trim();
         $(function(){
@@ -104,6 +113,9 @@ function questionFour(){
     answer2.text('variable.on(event-type, function(){})');
     answer3.text('addEventListener(event-type, function(){})');
     answer4.text('variable.addEventListener(function(){}, event-type');
+     // Remove previous event listeners
+    button.off('click');
+
     button.on('click', function(){
         clickedAnswer = $(this).text().trim();
         $(function(){
@@ -155,7 +167,7 @@ function endGame(){
 
 //store in local storage
 
-scoreSubmitButton.on("click", function(event) {
+scoreSubmitButton.on("click", function() {
     var initials = document.querySelector("#highscore").value;
     var time = timeLeft;
 
