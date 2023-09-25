@@ -52,7 +52,7 @@ Start menu */
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: var(--accent);
+    background-image: linear-gradient(45deg, var(--accent), var(--dark));
     padding: 30px;
     margin: 30px;
     border-radius: 10px; 
@@ -154,4 +154,29 @@ h3 a {
     font-family: sans-serif;
     font-size: 25px;
     display: flex;
+}
+
+/* highscores html file */
+
+.highscore-card{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(45deg, var(--accent), var(--dark));
+    padding: 30px;
+    margin: 30px;
+    border-radius: 10px;
+    
+}
+
+
+.highscore-card p{
+    font-family: sans-serif;
+    color: var(--accent2);
+    font-size: 20px;
+    background-color: var(--light);
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-weight: bolder;
+    border: solid 5px var(--dark);
+    
 }

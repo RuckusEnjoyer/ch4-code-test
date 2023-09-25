@@ -16,48 +16,56 @@ var right = $('.right');
 var highscores = $('.highscores');
 var scoreSubmitButton = $('#scores');
 var timerEl = $('#timer');
-var finalScore = {
-    initial: initialInput.value,
-    time: timeLeft
-}
 var timeLeft = 60;
+var finalScore = initialInput.value
 var timerInterval
+var clickedAnswer
 
-//Question
-function correct(){
-    var right = answer.attr("data-state")
-    if(right === 'correct'){
-        answerAnnouncer.text("Correct!")
-        return;
-    } else{
-        answerAnnouncer.text("Incorrect.")
-        timeLeft - 10;
-        return;
-    }
-}
+
+
+
+
+//The Questions
 function questionOne(){
     qTitleEl.text("Which is not a primative data type?");
     answer1.text('number');
     answer2.text('string');
     answer3.text('object');
     answer4.text('boolean');
-    answer3.attr("data-state", "correct")
     button.on('click', function(){
-        correct()
+        clickedAnswer = $(this).text().trim();
+    $(function(){
+        if (clickedAnswer === "object") {
+            answerAnnouncer.text("Correct!");
+            return
+        } else {
+        answerAnnouncer.text("Incorrect.");
+        timeLeft -= 10;
+    }
+    })
         questionTwo()
     });
 };
 
 
 function questionTwo(){
-    answer4.attr("data-state", "correct")
     qTitleEl.text('What javascript function lets you round down?');
     answer1.text('Math.random');
     answer2.text('Math.round');
     answer3.text('Math.ceiling');
     answer4.text('Math.floor');
     button.on('click', function(){
-        correct()
+        clickedAnswer = $(this).text().trim();
+        $(function(){
+            if (clickedAnswer === "math.floor") {
+                answerAnnouncer.text("Correct!");
+                return
+            } else {
+              answerAnnouncer.text("Incorrect.");
+              timeLeft -= 10;
+          }
+        })
+
         questionThree()
     });
 };
@@ -68,21 +76,40 @@ function questionThree(){
     answer2.text('Top-Down');
     answer3.text('Around and Around');
     answer4.text('It is not read');
-    answer2.attr("data-state", "correct")
     button.on('click', function(){
-        correct()
+        clickedAnswer = $(this).text().trim();
+        $(function(){
+            if (clickedAnswer === "Top-Down") {
+                answerAnnouncer.text("Correct!");return
+            } else {
+              answerAnnouncer.text("Incorrect.");
+              timeLeft -= 10;
+          }
+        })
+
         questionFour()
     });
 }
 
 function questionFour(){
     qTitleEl.text('What is the correct API function for an event listener in vanilla javascript?');
+
     answer1.text('variable.addEventListener(event-type, function(){})');
     answer2.text('variable.on(event-type, function(){})');
     answer3.text('addEventListener(event-type, function(){})');
     answer4.text('variable.addEventListener(function(){}, event-type');
     button.on('click', function(){
-        correct()
+        clickedAnswer = $(this).text().trim();
+        $(function(){
+            if (clickedAnswer === "variable.addEventListener(event-type, function(){})") {
+                answerAnnouncer.text("Correct!");
+                return
+            } else {
+              answerAnnouncer.text("Incorrect.");
+              timeLeft -= 10;
+          }
+        })
+
         endGame()
     });
 }
@@ -124,17 +151,28 @@ function endGame(){
     timerEl.text(' ');
 }
 
+//store in local storage
 
-//make highscores stored in local storage
+scoreSubmitButton.on("click", function(event) {
+    var initials = document.querySelector("#highscore").value;
+    var time = timeLeft;
 
-function scoreSubmissionHandler(){
-    localStorage.setItem('initials', JSON.stringify(finalScore))
-}
-
-scoreSubmitButton.on('click', function(){
-scoreSubmissionHandler()
-})
-
-
-//experimenting:
-
+    var array = []
+    if (localStorage.getItem('scores')) {
+        array = JSON.parse(localStorage.getItem('scores'))
+    } else {
+        array = []
+    }
+    // Create an object with properties for initials and time
+    var data = {
+      initials: initials,
+      time: time
+    };
+    array.push(data)
+  
+    // Convert the object to a JSON string
+    var jsonData = JSON.stringify(array);
+  
+    // Store the JSON string in the local storage
+    localStorage.setItem("scores", jsonData);
+  });
